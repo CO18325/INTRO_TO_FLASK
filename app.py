@@ -5,6 +5,28 @@ from flask import Flask
 app = Flask(__name__)
 
 
+
+
+
+# DEVELOP THE ROUTES
+
+
+# THIS WILL TELL THE WEB BROWSER 
+# TO RUN THIS FUNCTION WHEN
+# THIS PATH IS ENTERED IN THE ADDRESS BAR
+# WE CAN HAVE MULTIPLE PATHS 
+@app.route('/')
+@app.route('/index')
+def index():
+    return 'Hello World'
+
+
+
+
+
+
+
+
 # TO RUN THE APP
 if __name__ == '__main__':
     # RUN FUNCTION TO EXECUTE THE APP
@@ -14,4 +36,13 @@ if __name__ == '__main__':
     # THE WEB BROWSER DOESN'T KNOW WHERE TO GO
     # THUS, THE BROWSER WILL SHOW NO URL FOUND    
     app.run(debug=True)
+
+
+    # ------------------ IMPORTANT NOTE ------------------#
+    # WHEN WE ARE IN THE DEBUG MODE
+    # IF WE MAKE SOME CHANGES IN THE FILES AND SAVE THEM
+    # AND THE SERVER IS STILL RUNNING
+    # IT WILL AUTOMATICALLY DETECT THE CHANGES
+    # AND WILL IMPLEMENT IT WITHOUT RESTARTING THE SERVER
+    # THUS, CONSIDER THE DEBUG MODE AS THE LIVE SERVER PROPERTY
 
