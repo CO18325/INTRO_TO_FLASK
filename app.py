@@ -1,4 +1,5 @@
 from flask import Flask
+from flask.templating import render_template
 
 # CREATE AN INSTANCE OF THE FLASK CLASS
 
@@ -17,9 +18,25 @@ app = Flask(__name__)
 # WE CAN HAVE MULTIPLE PATHS 
 @app.route('/')
 @app.route('/index')
-def index():
-    return 'Hello World'
 
+# IN THESE FUNCTIONS YOU CAN RETURN :
+#       TEXT
+#       HTML SNIPPET
+#       ENTIRE HTML FILE
+def index():
+    
+    # return 'Hello World'
+    # return "<h1>Hello World</h1>"
+
+    # render_template IS THE FUNCTIO TO 
+    # PROVIDE THE ENTIRE HTML FILE TO THE BROWSER
+    # BY DEFAULT ALL THESE FILES NEEDS TO KEPT IN THE 'templates' FOLDER
+    # return render_template('index.html')
+
+    # WE CAN ALSO PASS INFORMATION OR VARIABLES TO THE HTML FILES
+    return render_template('index.html', current_title='custom Title(Example)')
+    # AND IN THE HTML FILE WE CAN ACCESS IT AS : {{current_title}}
+    
 
 
 
