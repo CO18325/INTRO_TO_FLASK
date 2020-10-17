@@ -1,10 +1,32 @@
-<html>
+<!-- <html>
     <head>
-        <!-- USING THE VARIABLE PASSED FROM THE FLASK APP -->
+        USING THE VARIABLE PASSED FROM THE FLASK APP
         <title>{{current_title}}</title>
     </head>
     <body>
 
         <h1> Hello Everyone!!</h1>
     </body>
-</html>
+</html> -->
+
+
+<!-- NOW, FROM HERE WE WILL USE THE BASE FILE CREATED USING THE GINGER TEMPLATE 
+     FOR MORE UNDERSTANDING VISIT THE base.html PAGE -->
+
+    <!--SYNTAX TO EXTEND THE BASE.HTML . MEANING TO IMPORT ITS CODE   -->
+    {% extends "base.html" %}
+
+    <!-- TO ACCESS THE MAIN BLOCK -->
+
+    {% block main %}
+
+        <h1> IT IS THE INDEX PAGE</h1> 
+
+    {% endblock main%}
+    
+
+
+
+
+
+

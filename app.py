@@ -38,7 +38,10 @@ def index():
     # AND IN THE HTML FILE WE CAN ACCESS IT AS : {{current_title}}
     
 
-
+# ROUTE FOR THE ABOUT PAGE
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 
