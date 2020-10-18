@@ -1,0 +1,29 @@
+# IN THIS FILE WE WILL WRITE SOME FORMS 
+# THAT WILL BE USED IN THE HTML PAGES
+
+# FLASK FORMS MODULE FOR WT FORMS
+from flask_wtf import FlaskForm
+# IMPORT THE STRING AND SUBMIT TYPE FIELDS
+# THERE ARE ALSO OTHER TYPES OF FIELS
+from wtforms import StringField, SubmitField
+
+from wtforms.validators import DataRequired
+
+# WE NEED TO USE CLASSES FOR WTFORMS
+# EVERY CLASS WILL BE FORM 
+# THESE CLASSES WILL BE EXTENDED FROM THE FlaskForm CLASS
+
+# FORM - 1 : ADD A TASK
+
+class AddTaskForm(FlaskForm):
+
+    # THE FIRST ARGUMENT IS THE LABEL
+    # SECOND ARGUMENT IS FOR FORM VALIDATIONS
+    # WE CAN HAVE MORE THAN ONE VALIDATORS ALSO
+    title = StringField("TITLE", validators=[DataRequired()] )
+
+    # FOR THE SUBMIT BUTTON OR EVENT
+    submit = SubmitField("Submit")
+
+
+

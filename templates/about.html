@@ -26,4 +26,17 @@
 
         <h1> IT IS THE ABOUT PAGE</h1> 
 
+        <!-- TO ACCESS THE FORM PASSED FROM THE ROUTES -->
+
+        <form action="about.html" method="POST">
+            <!-- CSRF TOKEN TO PREVENT MALICIOUS ATTACKS ON OUR WEBSITE FORMS -->
+            <!-- NEED TO LEARN MORE ABOUT IT -->
+            {{ form.csrf_token }}
+            
+            <!-- FORM IMPLEMENTATION  -->
+            {{ form.title.label }}
+            {{ form.title }}
+            {{ form.submit }}
+        </form>
+
     {% endblock main%}
