@@ -28,7 +28,7 @@
 
         <!-- TO ACCESS THE FORM PASSED FROM THE ROUTES -->
 
-        <form action="about.html" method="POST">
+        <form action="/about" method="POST">
             <!-- CSRF TOKEN TO PREVENT MALICIOUS ATTACKS ON OUR WEBSITE FORMS -->
             <!-- NEED TO LEARN MORE ABOUT IT -->
             {{ form.csrf_token }}
@@ -39,4 +39,11 @@
             {{ form.submit }}
         </form>
 
+        <!-- TO UTILIZE THE INFORMATION SUBMITTED BY THE FORM TAG -->
+        {% if title %}
+            <h1> {{ title }}</h1>
+        {% endif %}    
+        
     {% endblock main%}
+
+

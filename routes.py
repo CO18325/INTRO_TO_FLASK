@@ -6,7 +6,7 @@ import forms
 
 
 
-# DEVELOP THE ROUTES
+#------------------ DEVELOP THE ROUTES ------------------#
 
 
 # THIS WILL TELL THE WEB BROWSER 
@@ -36,13 +36,26 @@ def index():
     
 
 # ROUTE FOR THE ABOUT PAGE
-@app.route('/about')
+
+# FLASK BY DEFAULT CONSIDER ONLY THE GET REQUESTS
+# SO TO HAVE A POST REQUEST WE NEED TO EXPLICITLY 
+# DEFINE THE METHODS OF THE FORM IN THE ROUTES
+@app.route('/about', methods=['GET', 'POST'])
 def about():
 
     # return render_template('about.html')
     
     # USE A FORM WE CREATED IN FORMS.PY
     taskForm = forms.AddTaskForm()
+
+    # IF THE FORM IS SUBMITTED
+    # AND VALIDATION IS TRUE
+    # WE CAN GET THE DATA OF THE TITLE INPUT BOX BY taskForm.title.data
+    if taskForm.validate_on_submit():
+        print(taskForm.title.data)
+
+        # NOW TO RENDER THIS DATA TO A PAGE
+        return render_template('about.html', form=taskForm, title=taskForm.title.data)
 
     # WE CAN PASS THESE FORMS USING THE PARAMETER 'form'
     return render_template('about.html', form=taskForm)
