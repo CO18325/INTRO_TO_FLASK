@@ -1,4 +1,7 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy 
+
+
 
 
 # CREATE AN INSTANCE OF THE FLASK CLASS
@@ -9,6 +12,16 @@ app = Flask(__name__)
 # LERN MORE ABOUT IT 
 # WITHOUT THIS CONFIG SITE WITH CRIF TOKEN WON'T WORK
 app.config['SECRET_KEY'] = 'A_JIBBRISH_string'
+
+# FOR SQLALCHEMY
+# WE WILL USE THE SQLITE DATABASE SYSTEM
+# NAME OF DATABASE IS 'data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+
+
+# GET THE INSTANCE FOR THE DATABASE
+db = SQLAlchemy(app)
+
 
 
 # --------------- MOVE ALL THESE ROUTES TO ROUTES.PY FOR BETTER READABILITY ---------#

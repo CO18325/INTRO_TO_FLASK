@@ -3,6 +3,7 @@ from flask.templating import render_template
 
 # TO USE THE FLASK FORMS 
 import forms
+from flask import Flask,redirect,url_for,render_template,request
 
 
 
